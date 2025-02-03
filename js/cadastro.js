@@ -23,7 +23,7 @@ function cadastroUsuario() {
   let existe = listaUsuarios.some((usuario) => usuario.email === email);
 
 
-  if (inputEmail.value || inputSenha.value || inputRepeteSenha.value === "") {
+  if (inputEmail.value === "" || inputSenha.value === "" || inputRepeteSenha.value === "") {
     alert('Preencha todos os campos');
     limparCampos();
     return;
