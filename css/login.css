@@ -73,10 +73,3 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-#mensagem {
-  display: block;
-  justify-self: center;
-  color: red;
-  font-size: 20px;
-}

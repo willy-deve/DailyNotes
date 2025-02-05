@@ -5,12 +5,6 @@ let btnCadastro = document.getElementById('cadastro');
 let login = document.getElementById('login');
 let formulario = document.getElementById('form-cadastro');
 let vaiParaLogin = document.getElementById('login');
-let sucesso = document.getElementById('sucesso');
-let erro = document.getElementById('erro');
-let mensagemSucesso = document.getElementById('mensagem-sucesso');
-let iconeCarregando = document.getElementById('icone-carregando');
-
-
 
 formulario.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -64,6 +58,7 @@ function cadastroUsuario() {
   erro.setAttribute('style', 'display: none');
 
 
+
   listaUsuarios.push(usuarios)
   salvarNoStorage(listaUsuarios);
   console.log(listaUsuarios);
@@ -91,7 +86,6 @@ function buscarNoStorage() {
   let listaUsuariosStorage = JSON.parse(localStorage.getItem('setUsuario')) || [];
   return listaUsuariosStorage;
 }
-
 
 
 //FUNÇÔES AUXILIARES

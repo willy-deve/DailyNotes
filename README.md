@@ -1,1 +1,1 @@
-Esse projeto consiste em um CRUD de tarefas com ID, Titulo e Descrição, utilizando apenas HTML, CSS e JAVASCRIPT.
+Esse projeto consiste em um CRUD de tarefas, login e cadastro, utilizando apenas HTML, CSS e JAVASCRIPT.
