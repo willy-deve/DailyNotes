@@ -103,3 +103,8 @@ a:hover {
     transform: rotate(360deg);
   }
 }
+
+#erro {
+  display: none;
+  color: red;
+}

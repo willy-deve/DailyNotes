@@ -30,23 +30,24 @@ function cadastroUsuario() {
 
 
   if (inputEmail.value === "" || inputSenha.value === "" || inputRepeteSenha.value === "") {
-    alert('Preencha todos os campos');
+    erro.setAttribute('style', 'display:block')
+    erro.innerHTML = 'Necessário preencher todos os campos'
     limparCampos();
     return;
   }
 
   if (senha != repeteSenha) {
-    alert('As senhas não sao iguas')
+    erro.setAttribute('style', 'display: block');
+    erro.innerHTML = 'As senhas não sao iguas';
     limparCampos();
     return;
-
   }
 
   if (existe) {
-    alert('Esse email ja esta cadastrado')
+    erro.setAttribute('style', 'display: block');
+    erro.innerHTML = 'E-mail já cadastrado';
     limparCampos();
     return;
-
   }
 
   let senhaCriptografada = CryptoJS.TripleDES.encrypt(senha, 'hash12345').toString();
@@ -60,6 +61,7 @@ function cadastroUsuario() {
   sucesso.setAttribute('style', 'display: flex; justify-content: center; align-items: center;');
   mensagemSucesso.innerHTML = 'Cadastrando usuário...';
   iconeCarregando.style.display = 'inline-block';
+  erro.setAttribute('style', 'display: none');
 
 
   listaUsuarios.push(usuarios)
@@ -68,7 +70,7 @@ function cadastroUsuario() {
   limparCampos();
   setTimeout(() => {
     window.location.href = 'login.html'
-  }, 30500)
+  }, 2500)
 
 
 }
