@@ -5,7 +5,7 @@ let formulario = document.querySelector('#form-recado');
 let inputId = document.querySelector('#input-id');
 let inputTitulo = document.querySelector('#input-titulo');
 let inputDescricao = document.querySelector('#input-descricao');
-
+let erro = document.getElementById('erro')
 
 //BOTÃO
 let btnSalvar = document.querySelector('#btn-salvar');
@@ -41,8 +41,9 @@ function adicionarNovoRegistro() {
   let existe = listaRecados.some((recado) => recado.id == id);
 
   if (existe) {
+    erro.setAttribute('style', 'display: block')
+    erro.innerHTML = 'ID já cadastrado'
     limparCampos();
-    alert('ID já cadastrado');
     return;
   }
 
@@ -52,7 +53,8 @@ function adicionarNovoRegistro() {
 
 
   if (id == '' || titulo == '' || descricao == '') {
-    alert('Necessario preencher todos os campos');
+    erro.setAttribute('style', 'display: block')
+    erro.innerHTML = 'Necessario preencher todos os campos'
     return;
   }
 
@@ -61,6 +63,8 @@ function adicionarNovoRegistro() {
     titulo,
     descricao
   }
+
+  erro.setAttribute('style', 'display: none')
 
   listaRecados.push(recados);
   console.log(listaRecados);
