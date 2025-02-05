@@ -4,6 +4,7 @@ let btnLogin = document.getElementById('login');
 let btnCadastro = document.getElementById('cadastro');
 let formulario = document.getElementById('form-login');
 let vaiParaCadastro = document.getElementById('cadastro');
+let erro = document.getElementById('erro')
 
 
 
@@ -22,7 +23,8 @@ function login() {
   let listaUsuario = buscarUsuarioNoStorage();
 
   if (email.value === "" || senha.value === "") {
-    alert("preecha todos os campos")
+    erro.setAttribute('style', 'display: block')
+    erro.innerHTML = 'Preencha todos os campos'
     limparCampos();
     return;
   }
@@ -37,10 +39,17 @@ function login() {
 
   if (usuarioEncontrado !== -1) {
     sessionStorage.setItem('usuarioLogado', usuarioEncontrado);
-    window.location.href = "recados.html";
+    erro.setAttribute('style', 'display: block; color: green')
+    erro.innerHTML = 'Sucesso'
+    setTimeout(() => {
+      window.location.href = "recados.html";
+    }, 2000)
+
+
   } else {
     limparCampos();
-    alert('Dados incorretos')
+    erro.setAttribute('style', 'display: block')
+    erro.innerHTML = 'Dados incorretos'
   }
 }
 
