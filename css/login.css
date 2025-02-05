@@ -73,3 +73,9 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+#erro {
+  display: none;
+  color: #dc3545;
+  justify-self: center;
+}
