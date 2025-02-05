@@ -5,12 +5,6 @@ let btnCadastro = document.getElementById('cadastro');
 let login = document.getElementById('login');
 let formulario = document.getElementById('form-cadastro');
 let vaiParaLogin = document.getElementById('login');
-let sucesso = document.getElementById('sucesso');
-let erro = document.getElementById('erro');
-let mensagemSucesso = document.getElementById('mensagem-sucesso');
-let iconeCarregando = document.getElementById('icone-carregando');
-
-
 
 formulario.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -57,9 +51,6 @@ function cadastroUsuario() {
     recadosDoUsuario: []
   }
 
-  sucesso.setAttribute('style', 'display: flex; justify-content: center; align-items: center;');
-  mensagemSucesso.innerHTML = 'Cadastrando usuário...';
-  iconeCarregando.style.display = 'inline-block';
 
 
   listaUsuarios.push(usuarios)
@@ -68,7 +59,7 @@ function cadastroUsuario() {
   limparCampos();
   setTimeout(() => {
     window.location.href = 'login.html'
-  }, 30500)
+  }, 1500)
 
 
 }
